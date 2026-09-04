@@ -1,0 +1,6 @@
+{
+  "name": "Sahafi Rent Book",
+  "description": "Sahafi Restaurant Credit Ledger & Rent Book management system for tracking customer food debt, settlements, and reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

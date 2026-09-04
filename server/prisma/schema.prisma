@@ -1,0 +1,71 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         String   @default("STAFF")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Customer {
+  id            String         @id @default(cuid())
+  name          String
+  phone         String?
+  notes         String?
+  isRukun       Boolean        @default(false)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  creditRecords CreditRecord[]
+  payments      Payment[]
+}
+
+model CreditRecord {
+  id              String    @id @default(cuid())
+  customerId      String
+  customer        Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  foodDescription String
+  amount          Decimal   @db.Decimal(10, 2)
+  paidAmount      Decimal   @default(0) @db.Decimal(10, 2)
+  remainingAmount Decimal   @db.Decimal(10, 2)
+  status          String    @default("UNPAID") // UNPAID, PARTIAL, PAID, OVERDUE
+  dueDate         String?
+  dueTime         String?
+  notes           String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  payments        Payment[]
+}
+
+model Payment {
+  id             String        @id @default(cuid())
+  customerId     String
+  customer       Customer      @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  creditRecordId String?
+  creditRecord   CreditRecord? @relation(fields: [creditRecordId], references: [id], onDelete: SetNull)
+  amount         Decimal       @db.Decimal(10, 2)
+  paymentDate    DateTime      @default(now())
+  notes          String?
+  createdAt      DateTime      @default(now())
+}
+
+model RestaurantProfile {
+  id              String   @id @default(cuid())
+  restaurantName  String
+  phone           String?
+  address         String?
+  currency        String   @default("$")
+  defaultLanguage String   @default("so")
+  logo            String?  @db.Text
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}

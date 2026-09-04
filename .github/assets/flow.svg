@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 236" width="1160" height="236" role="img" aria-label="The life of one record: served, promised, part paid, settled">
+  <title>The life of one record</title>
+  <defs>
+    <linearGradient id="f-ground" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f6ecdd"/><stop offset="100%" stop-color="#efe3d0"/>
+    </linearGradient>
+    <linearGradient id="f-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c67139"/><stop offset="62%" stop-color="#a3803f"/>
+      <stop offset="100%" stop-color="#6f8158"/>
+    </linearGradient>
+    <filter id="f-lift" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#46341f" flood-opacity=".15"/>
+    </filter>
+    <clipPath id="f-frame"><rect width="1160" height="236" rx="24"/></clipPath>
+    <style><![CDATA[
+      .coin  { animation: run 5.4s cubic-bezier(.45,0,.55,1) infinite; }
+      .coin2 { animation-delay: 2.7s }
+      @keyframes run {
+        0%   { transform: translateX(0);   opacity: 0 }
+        6%   { opacity: 1 }
+        90%  { opacity: 1 }
+        100% { transform: translateX(856px); opacity: 0 }
+      }
+      .beat { animation: beat 2.8s ease-in-out infinite; transform-origin: 1008px 116px; }
+      @keyframes beat { 0%,100% { transform: scale(1) } 50% { transform: scale(1.06) } }
+      .dash { stroke-dasharray: 5 9; animation: march 1.9s linear infinite; }
+      @keyframes march { to { stroke-dashoffset: -28 } }
+      @media (prefers-reduced-motion: reduce) {
+        .coin { display: none } .beat, .dash { animation: none }
+      }
+    ]]></style>
+  </defs>
+
+  <g clip-path="url(#f-frame)">
+    <rect width="1160" height="236" fill="url(#f-ground)"/>
+
+    <path d="M 152 116 H 1008" stroke="url(#f-line)" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+    <path class="dash" d="M 152 116 H 1008" stroke="#fffdfa" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+
+    <circle class="coin"       cx="152" cy="116" r="7" fill="#c67139"/>
+    <circle class="coin coin2" cx="152" cy="116" r="5" fill="#6f8158"/>
+
+    <g font-family="'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+      <g filter="url(#f-lift)"><circle cx="152" cy="116" r="34" fill="#fffdfa"/></g>
+      <circle cx="152" cy="116" r="34" fill="none" stroke="#e8dcc8"/>
+      <text x="152" y="123" font-family="Georgia, serif" font-size="19" font-weight="700" fill="#c67139">1</text>
+      <text x="152" y="50"  font-size="14.5" font-weight="600" fill="#241f1b">Food served</text>
+      <text x="152" y="192" font-size="12.5" fill="#8b8175">$100 on credit</text>
+
+      <g filter="url(#f-lift)"><circle cx="437" cy="116" r="34" fill="#fffdfa"/></g>
+      <circle cx="437" cy="116" r="34" fill="none" stroke="#e8dcc8"/>
+      <text x="437" y="123" font-family="Georgia, serif" font-size="19" font-weight="700" fill="#c67139">2</text>
+      <text x="437" y="50"  font-size="14.5" font-weight="600" fill="#241f1b">Payment promised</text>
+      <text x="437" y="192" font-size="12.5" fill="#8b8175">End of month · 8:00 PM</text>
+
+      <g filter="url(#f-lift)"><circle cx="722" cy="116" r="34" fill="#fffdfa"/></g>
+      <circle cx="722" cy="116" r="34" fill="none" stroke="#e8dcc8"/>
+      <text x="722" y="123" font-family="Georgia, serif" font-size="19" font-weight="700" fill="#a3803f">3</text>
+      <text x="722" y="50"  font-size="14.5" font-weight="600" fill="#241f1b">Part paid</text>
+      <text x="722" y="192" font-size="12.5" fill="#8b8175">$60 in · $40 haraa</text>
+
+      <g class="beat">
+        <g filter="url(#f-lift)"><circle cx="1008" cy="116" r="34" fill="#eef4e6"/></g>
+        <circle cx="1008" cy="116" r="34" fill="none" stroke="#dbe6c9"/>
+      </g>
+      <path d="M 995 116 l 9 9 l 18 -19" stroke="#5b6b47" stroke-width="3.4" fill="none"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="1008" y="50"  font-size="14.5" font-weight="600" fill="#241f1b">Paid in Full</text>
+      <text x="1008" y="192" font-size="12.5" fill="#6f8158">Marked automatically</text>
+    </g>
+  </g>
+</svg>

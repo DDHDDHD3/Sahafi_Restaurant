@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 430" width="1160" height="430" role="img" aria-label="The same book on a desktop sidebar and a phone pill bar">
+  <title>One book, every screen</title>
+  <defs>
+    <linearGradient id="r-ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6ecdd"/><stop offset="100%" stop-color="#ecdfcb"/>
+    </linearGradient>
+    <linearGradient id="r-terra" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d9884b"/><stop offset="100%" stop-color="#b2622d"/>
+    </linearGradient>
+    <filter id="r-lift" x="-25%" y="-25%" width="150%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#46341f" flood-opacity=".18"/>
+    </filter>
+    <clipPath id="r-frame"><rect width="1160" height="430" rx="24"/></clipPath>
+    <clipPath id="deskClip"><rect x="60" y="46" width="620" height="338" rx="18"/></clipPath>
+    <clipPath id="phoneClip"><rect x="784" y="40" width="228" height="350" rx="30"/></clipPath>
+    <style><![CDATA[
+      .navpill { animation: navpill 8.5s cubic-bezier(.65,0,.35,1) infinite; }
+      @keyframes navpill {
+        0%,18%   { transform: translateY(0) }
+        26%,44%  { transform: translateY(38px) }
+        52%,70%  { transform: translateY(76px) }
+        78%,100% { transform: translateY(0) }
+      }
+      .tabpill { animation: tabpill 8.5s cubic-bezier(.65,0,.35,1) infinite; }
+      @keyframes tabpill {
+        0%,18%   { transform: translateX(0) }
+        26%,44%  { transform: translateX(52px) }
+        52%,70%  { transform: translateX(104px) }
+        78%,100% { transform: translateX(0) }
+      }
+      .shimmer { animation: shimmer 5s ease-in-out 1s infinite; }
+      @keyframes shimmer { 0%,100% { opacity: .85 } 50% { opacity: 1 } }
+      @media (prefers-reduced-motion: reduce) { .navpill,.tabpill,.shimmer { animation: none } }
+    ]]></style>
+  </defs>
+
+  <g clip-path="url(#r-frame)">
+    <rect width="1160" height="430" fill="url(#r-ground)"/>
+
+    <g filter="url(#r-lift)"><rect x="60" y="46" width="620" height="338" rx="18" fill="#fffdfa"/></g>
+    <g clip-path="url(#deskClip)">
+      <rect x="60" y="46" width="150" height="338" fill="#f4ebde"/>
+      <rect x="76" y="62" width="26" height="26" rx="9" fill="url(#r-terra)"/>
+      <rect class="navpill" x="72" y="110" width="126" height="30" rx="15" fill="#fffdfa"/>
+      <g fill="#8b8175">
+        <rect x="88" y="121" width="70" height="7" rx="3.5" opacity=".9"/>
+        <rect x="88" y="159" width="58" height="7" rx="3.5" opacity=".55"/>
+        <rect x="88" y="197" width="76" height="7" rx="3.5" opacity=".55"/>
+        <rect x="88" y="235" width="64" height="7" rx="3.5" opacity=".55"/>
+      </g>
+
+      <rect x="232" y="62" width="180" height="14" rx="7" fill="#241f1b" opacity=".8"/>
+      <rect x="232" y="88"  width="250" height="8" rx="4" fill="#8b8175" opacity=".5"/>
+      <rect x="232" y="116" width="128" height="60" rx="16" fill="#faf3e9"/>
+      <rect x="368" y="116" width="128" height="60" rx="16" fill="#eef4e6"/>
+      <rect x="504" y="116" width="128" height="60" rx="16" fill="#fdf0e6"/>
+      <g font-family="Georgia, serif" font-size="18" font-weight="700">
+        <text x="248" y="153" fill="#241f1b">$167</text>
+        <text x="384" y="153" fill="#5b6b47">$87</text>
+        <text x="520" y="153" fill="#8c491a">$80</text>
+      </g>
+      <rect x="232" y="192" width="400" height="7" rx="3.5" fill="#241f1b" opacity=".1"/>
+      <rect class="shimmer" x="232" y="192" width="208" height="7" rx="3.5" fill="#6f8158"/>
+      <g>
+        <rect x="232" y="220" width="400" height="26" rx="9" fill="#faf3e9"/>
+        <rect x="232" y="252" width="400" height="26" rx="9" fill="#fffdfa"/>
+        <rect x="232" y="284" width="400" height="26" rx="9" fill="#faf3e9"/>
+        <rect x="232" y="316" width="400" height="26" rx="9" fill="#fffdfa"/>
+        <rect x="232" y="348" width="400" height="26" rx="9" fill="#faf3e9"/>
+      </g>
+    </g>
+
+    <g filter="url(#r-lift)"><rect x="784" y="40" width="228" height="350" rx="30" fill="#fffdfa"/></g>
+    <g clip-path="url(#phoneClip)">
+      <rect x="784" y="40" width="228" height="46" fill="#f4ebde"/>
+      <rect x="800" y="54" width="20" height="20" rx="7" fill="url(#r-terra)"/>
+      <rect x="828" y="60" width="72" height="8" rx="4" fill="#241f1b" opacity=".65"/>
+      <rect x="936" y="54" width="60" height="20" rx="10" fill="url(#r-terra)"/>
+      <rect x="800" y="102" width="92" height="52" rx="14" fill="#faf3e9"/>
+      <rect x="904" y="102" width="92" height="52" rx="14" fill="#eef4e6"/>
+      <g font-family="Georgia, serif" font-size="15" font-weight="700">
+        <text x="814" y="135" fill="#241f1b">$167</text>
+        <text x="918" y="135" fill="#5b6b47">$87</text>
+      </g>
+      <rect x="800" y="168" width="196" height="42" rx="13" fill="#faf3e9"/>
+      <rect x="800" y="218" width="196" height="42" rx="13" fill="#faf3e9"/>
+      <rect x="800" y="268" width="196" height="42" rx="13" fill="#faf3e9"/>
+      <rect x="798" y="332" width="200" height="46" rx="23" fill="#f4ebde"/>
+      <rect class="tabpill" x="806" y="338" width="44" height="34" rx="17" fill="#c67139" opacity=".2"/>
+      <g fill="#8b8175">
+        <circle cx="828" cy="352" r="4"/><rect x="816" y="362" width="24" height="5" rx="2.5"/>
+        <circle cx="880" cy="352" r="4" opacity=".65"/><rect x="868" y="362" width="24" height="5" rx="2.5" opacity=".65"/>
+        <circle cx="932" cy="352" r="4" opacity=".65"/><rect x="920" y="362" width="24" height="5" rx="2.5" opacity=".65"/>
+      </g>
+    </g>
+
+    <g font-family="'Segoe UI', Helvetica, Arial, sans-serif" fill="#8b8175" font-size="12.5">
+      <text x="60"  y="410">Sidebar from 1024px up</text>
+      <text x="784" y="412">Floating pill below it</text>
+    </g>
+  </g>
+</svg>

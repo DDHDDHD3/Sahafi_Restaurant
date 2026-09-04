@@ -1,0 +1,8 @@
+.DS_Store
+*.dc.html
+_ds/
+support.js
+.thumbnail
+node_modules/
+dist/
+.env

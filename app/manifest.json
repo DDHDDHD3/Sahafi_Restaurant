@@ -1,0 +1,16 @@
+{
+  "name": "Sahafi Rent Book",
+  "short_name": "Sahafi",
+  "description": "Buugga Deynta Makhaayadda — Zero Server Restaurant Credit Ledger",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f3e9db",
+  "theme_color": "#c67139",
+  "icons": [
+    {
+      "src": "../.github/assets/hero.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
