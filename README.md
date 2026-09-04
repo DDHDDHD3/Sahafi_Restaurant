@@ -117,6 +117,13 @@ sahafi-restuarant/
 
 ---
 
+---
+# Sahafi Rent Book - Local-first Ledger
+# No external API keys required
+---
+
+
+
 ## Data & privacy
 
 All data lives in `localStorage` under the keys `sahafi.rentbook.v2` and `sahafi.profile.v1`. Nothing is ever sent to a server. Clearing browser storage resets the book to the built-in demo data, which can also be restored any time from **Settings → Reset demo data**.
